@@ -1,6 +1,136 @@
 @import "tailwindcss";
 
-:root {
+
+/* *{
+  padding:0px;
+  margin:0px;
+  box-sizing: border-box;
+} */
+
+
+
+@theme {
+  --container-center: true;
+  --container-padding: 15px;
+
+  /* Screens */
+  --breakpoint-xs: 475px;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 960px;
+  --breakpoint-xl: 1430px;
+  --breakpoint-2xl: 1920px;
+  --breakpoint-3xl: 2260px;
+
+
+  /* Background images */
+  /* --background-hero-overlay: url('\public\assets\hero\hero-overlay.png'); */
+  
+  --background-opening-hours: url('/assets/opening-hours/bg.png');
+  --background-footer: url('/assets/footer/bg.png');
+
+  /* Colors */
+  --color-primary: #100e0e;
+  --color-secondary: #787f8a;
+  --color-accent: #c7a17a;
+  --color-accent-hover: #a08161;
+
+  /* Fonts */
+  --font-family-primary: var(--font-cormorant-upright);
+  --font-family-secondary: var(--font-open-sans);
+}
+
+
+
+@layer base {
+  body {
+    font-family: var(--font-open-sans), sans-serif;
+    @apply text-secondary leading-relaxed m-0 p-0 box-border; 
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-cormorant-upright), serif;
+    @apply text-primary;
+  }
+}
+
+.font-primary{
+  font-family: var(--font-cormorant-upright), serif;
+}
+
+.font-secondary{
+  font-family: var(--font-open-sans), sans-serif;
+}
+
+
+@layer components {
+  .h1 {
+    @apply text-[60px] xs:text-[65px] sm:text-[70px] xl:text-[150px] leading-[1.1] font-semibold ;
+  }
+
+  .h2 {
+    @apply text-[56px] xl:text-[80px] leading-[1.2] font-bold;
+  }
+
+  .lead {
+    @apply text-lg;
+  }
+
+  .btn {
+    @apply min-w-[150px] h-[54px] px-6 bg-accent hover:bg-accent-hover text-primary text-[13px] uppercase
+    font-semibold tracking-[.15em] transition-all;
+  }
+
+  .screenPadding{
+    @apply px-[20px] max-w-screen-3xl mx-auto; 
+  }
+  .screenPaddingTop{
+    @apply pt-[48px] md:pt-[60px] lg:pt-[80px] xl:pt-[120px];
+  }
+  .screenPaddingBottom{
+    @apply pb-[48px] md:pb-[60px] lg:pb-[80px] xl:pb-[120px];
+  }
+}
+
+
+
+
+
+/* 
+@theme inline {
+  container:{
+    center:true,
+    padding:'15px'
+  },
+  screens:{
+    sm:'640px',
+    md:'768px',
+    lg:'960px',
+    xl:'1430px'
+  },
+  extend:{
+    backgroundImage:{}
+  },
+  fontFamily:{
+    primary: "var(--font-cormorant-upright)",
+    secondary: "var(--font-open-sans)"
+  }
+  extend:{
+    colors:{
+      primary:{
+        DEFAULT:'#100e0e',
+      }
+    }
+  }
+}
+ */
+
+
+
+
+
+
+
+/* :root {
   --background: #ffffff;
   --foreground: #171717;
 }
@@ -23,4 +153,4 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
-}
+} */
